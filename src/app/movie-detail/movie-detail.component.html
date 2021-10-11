@@ -1,0 +1,28 @@
+<p-dialog position="right" header="MOVIE DETAILS" [(visible)]="showMovieDetail" [modal]="true" [style]="{width: '35vw', height:'75vh'}" (onHide)="onClose()">
+    <div style="background-color:#88a2aa;">
+        <div style="text-align: center;">
+            <h2>{{_movie?.title}}</h2>
+            <h4>Directed by {{_movie?.director}}</h4>
+        </div>
+        <br>
+        <div style="margin: 5px;">
+            <span>Cast:</span>
+            <span *ngFor="let cast of _movie?.cast"><label style="margin: 3px; background-color: white; border: 1px; border-radius: 35%;"> {{cast}} </label>&nbsp;</span>
+        </div>
+        <br>
+        <div style="margin: 5px;">
+            <span>Genre:</span>
+            <span *ngFor="let genre of _movie?.genre"><label style="margin: 3px; background-color: white; border: 1px; border-radius: 35%;"> {{genre}} </label>&nbsp;</span>
+        </div>
+        <br>
+        <div style="margin: 5px;">
+            <span>Plot:</span><br>
+            <span>{{_movie?.plot}}}</span>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div style="text-align: right;">
+        All movie data are from Wikipedia and IMDB.
+    </div>
+</p-dialog>
